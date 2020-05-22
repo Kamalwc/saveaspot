@@ -52,10 +52,17 @@ app.get('/vwaitlist',(req,res)=>{
     }
 });
 
-app.post('/add',(req,res) =>{
-    const newtables = req.body;
-    tables.push(newtables);
-})
+app.post("/api/makeres", function(req, res) {
+    var newReservation = req.body;
+    newReservation.uniqueID = newReservation.uniqueID.replace(/\s+/g, "").toLowerCase();
+    console.log(newReservation);
+    if (tables.length === 5) {
+        newReservation.push(waitList);
+    } else {
+        newReservation.push(tables);
+    }
+    res.json(newReservation);
+  });
 
 
 app.listen(PORT, function() {
