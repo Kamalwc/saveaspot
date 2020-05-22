@@ -1,0 +1,31 @@
+.jumbotron {
+    position: relative;
+}
+
+.display-4 {
+    text-align:center;
+}
+
+.lead {
+    text-align: center;
+}
+
+#center-btn {
+    position: absolute;
+    top:79%;
+    right:46%;
+}
+
+#center-btn2 {
+    position: absolute;
+    top:79%;
+    right:41%;
+}
+
+#btn-table {
+    font-size: 25px;
+}
+
+.list-group-item{
+    width:1000%;
+}
