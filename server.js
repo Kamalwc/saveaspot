@@ -9,15 +9,25 @@ app.use(express.json());
 
 
 const tables = [
- 
+    {
+        "customerName": "TABLEZZZ",
+        "phoneNumber": "9737679131",
+        "customerEmail": "delingerr@gmail.com",
+        "customerID": "1"
+        }
 ];
 
 const waitList = [
-
+    {
+        "customerName": "WAITLIST ju herrd",
+        "phoneNumber": "9737679131",
+        "customerEmail": "delingerr@gmail.com",
+        "customerID": "1"
+        }
 ];
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,".html"))
+    res.sendFile(path.join(__dirname,"home.html"))
 });
 
 app.get('/tables',(req,res)=>{
@@ -26,17 +36,17 @@ app.get('/tables',(req,res)=>{
 });
 
 app.get('/reserve',(req,res)=>{
-    res.sendFile(path.join(__dirname,".html"))
+    res.sendFile(path.join(__dirname,"makeres.html"))
     
 });
 
-app.get('/tables',(req,res)=>{
+app.get('/vtables',(req,res)=>{
     for(i in tables){
         return res.json(tables[i])
     }
 });
 
-app.get('/waitlist',(req,res)=>{
+app.get('/vwaitlist',(req,res)=>{
     for(i in waitlist){
         return res.json(waitlist[i]);
     }
